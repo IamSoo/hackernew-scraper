@@ -9,8 +9,8 @@
 
 
 ## Run as a standalone application with REST endpoint.
-Install python3 and pip on your machine : https://www.python.org/downloads/.
-Use a shell/terminal/bash shell window to run the following commands.
+Install python3 and pip on your machine : https://www.python.org/downloads/.<br />
+Use a shell/terminal/bash shell window to run the following commands.<br />
 
 ```
 git clone git@github.com:IamSoo/hackernews-scraper.git
@@ -23,7 +23,7 @@ source scrape_env/bin/activate
 pip install -r requirements.txt
 
 ```
-The above will create the virtualenv and install all our required libraries.
+The above will create the virtualenv and install all our required libraries.<br />
 
 To run the script and to see 3 top posts type the following command:
 ```
@@ -35,10 +35,10 @@ To run the rest end point use the following command:
 python hackernewsEndpoint.py
 
 ```
-This will run one flask server. To test open a browser and type below :
+This will run one flask server. To test open a browser and type below :<br/>
 http://localhost:5000/hackernews?posts=3
 
-To use curl command to test open a shell/scripting window and type the following :
+To use curl command to test open a shell/scripting window and type the following :<br/>
 curl http://localhost:5000/hackernews?posts=3
 
 
@@ -52,8 +52,8 @@ docker run -p 5000:5000 iamsoo/hackernews-scraping
 
 ```
 
-This will run one flask server on a container. To test open a browser and type below :
+This will run one flask server on a container. To test open a browser and type below :<br/>
 http://localhost:5000/hackernews?posts=3
 
-To use curl command to test open a shell/scripting window and type the following :
+To use curl command to test open a shell/scripting window and type the following :<br/>
 curl http://localhost:5000/hackernews?posts=3
