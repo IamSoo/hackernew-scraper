@@ -30,7 +30,7 @@ To run the script and to see 3 top posts type the following command:
 python hackernews.py --posts 3
 
 ```
-To run the rest end point use the following command:
+To run the REST end point use the following command:
 ```
 python hackernewsEndpoint.py
 
