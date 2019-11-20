@@ -1,4 +1,15 @@
 FROM python:3
 
+MAINTAINER Soonam Kalyan "princesoonam@yahoo.co.in"
+
+COPY . /app
+
+WORKDIR /app
+
 RUN pip install -r requirements.txt
+
+
+EXPOSE 5000
+
+CMD [ "python", "hackernewsEndpoint.py"]
 
