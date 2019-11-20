@@ -1,8 +1,9 @@
 # Hackernews Scraper
-Alt-H1
+
+
 *This is a python app and is used as a web scraper for hackernews site. The app takes one input(+ive integer) no of posts as an argument.*
 *And shows the top no of posts. It also exposes one REST endpoint that can be used with <b>curl</b> command.*
-*It uses famous BeautifulSoup to parse the page information and then sub children are extracted.**
+*It uses famous BeautifulSoup to parse the page information and then sub children are extracted.*
 
 *The code is simple and easy to understand. The APP reads the site url from the config.yml file.*
 
@@ -54,5 +55,5 @@ docker run -p 5000:5000 iamsoo/hackernews-scraping
 This will run one flask server on a container. To test open a browser and type below :
 http://localhost:5000/hackernews?posts=3
 
-To use curl command to test open a shell/scripting window and type the following :  
+To use curl command to test open a shell/scripting window and type the following :
 curl http://localhost:5000/hackernews?posts=3
