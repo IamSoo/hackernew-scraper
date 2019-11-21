@@ -19,5 +19,4 @@ if __name__ == "__main__":
     scraper.validateInputs(no_of_posts)
     soup = scraper.scrape()
     post_dict_list = scraper.extract(soup,no_of_posts)
-
     print(post_dict_list)

@@ -1,5 +1,6 @@
 import urllib3
 from bs4 import BeautifulSoup
+from scrape.ScrapeObject import Scrape
 
 from scrape.scraperMainParent import ScraperMainParent
 
@@ -10,9 +11,15 @@ class Scraper(ScraperMainParent):
     def __init__(self, url_root):
         self.url_root = url_root
 
+    def extractParentNodes(self,soup,node,className):
+        return soup.find_all(node, {"class": className})
+
+    def extractChildNode(self,soup,node,className):
+        return soup.find(node, {"class": className})
+
     def extract(self, soup, noOfAriticles):
-        all_posts = soup.find_all("tr", {"class": "athing"})
-        all_sub_texts = soup.find_all("td", {"class": "subtext"})
+        all_posts = self.extractParentNodes(soup,"tr","athing")
+        all_sub_texts=self.extractParentNodes(soup,"td","subtext")
         all_scrapes = []
         for i in range(0, noOfAriticles):
             post = all_posts[i]
@@ -20,14 +27,14 @@ class Scraper(ScraperMainParent):
             points = int(sub[0])
             author = sub[3]
             comments = int(sub[-2])
-
-            rank = int(post.find("span", {"class": "rank"}).text[:-1])
-            uri = post.find("a", {"class": "storylink"})["href"]
-            title = post.find("a", {"class": "storylink"}).text
-            post_dict = {}
-            post_dict = {"title": title, "uri": uri, "author": author, "points": points, "comments": comments,
-                         "rank": rank}
-            all_scrapes.append(post_dict)
+            rank = self.extractChildNode(post,"span","rank").text[:-1]
+            uri = self.extractChildNode(post, "a", "storylink")["href"]
+            title = self.extractChildNode(post, "a", "storylink").text
+            #post_dict = {"title": title, "uri": uri, "author": author, "points": points, "comments": comments,
+            #             "rank": int(rank)}
+            object = Scrape(title,uri,author,points,comments,int(rank))
+            strJson = object.encode_user(object)
+            all_scrapes.append(strJson)
         return all_scrapes
 
 

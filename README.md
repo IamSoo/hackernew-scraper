@@ -1,7 +1,7 @@
 # Hackernews Scraper
 
 
-*This is a python app and is used as a web scraper for hackernews site. The app takes one input(+ive integer) no of posts as an argument.*
+*This is a python app and can be used as a web scraper for hackernews site. The app takes one input( a +ive integer) no of posts as an argument.*
 *And shows the top no of posts. It also exposes one REST endpoint that can be used with <b>curl</b> command.*
 *It uses famous BeautifulSoup to parse the page information and then sub children are extracted.*
 
@@ -24,6 +24,16 @@ pip install -r requirements.txt
 
 ```
 The above will create the virtualenv and install all our required libraries.<br />
+
+### Unit testing and coverage:</br>
+For test and coverage we can use the following syntax:</br>
+
+```
+python  hackernewsTest.py
+
+coverage run hackernewsTest.py
+coverage report -m
+```
 
 To run the script and to see 3 top posts type the following command:
 ```
