@@ -34,7 +34,7 @@ python  hackernewsTest.py
 coverage run hackernewsTest.py
 coverage report -m
 ```
-
+### Testing:</br>
 To run the script and to see 3 top posts type the following command:
 ```
 python hackernews.py --posts 3
@@ -61,6 +61,7 @@ Running docker image:
 docker run -p 5000:5000 iamsoo/hackernews-scraping
 
 ```
+### Testing:</br>
 
 This will run one flask server on a container. To test open a browser and type below :<br/>
 http://localhost:5000/hackernews?posts=3
