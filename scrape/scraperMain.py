@@ -11,12 +11,6 @@ class Scraper(ScraperMainParent):
     def __init__(self, url_root):
         self.url_root = url_root
 
-    def extractParentNodes(self,soup,node,className):
-        return soup.find_all(node, {"class": className})
-
-    def extractChildNode(self,soup,node,className):
-        return soup.find(node, {"class": className})
-
     def extract(self, soup, noOfAriticles):
         all_posts = self.extractParentNodes(soup,"tr","athing")
         all_sub_texts=self.extractParentNodes(soup,"td","subtext")

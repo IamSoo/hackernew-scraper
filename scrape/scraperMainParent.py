@@ -19,3 +19,9 @@ class ScraperMainParent:
         if (no_of_posts <= 0):
             print(' !!! Error : Please input a postive integer.!')
             raise SystemExit
+
+    def extractParentNodes(self,soup,node,className):
+        return soup.find_all(node, {"class": className})
+
+    def extractChildNode(self,soup,node,className):
+        return soup.find(node, {"class": className})
