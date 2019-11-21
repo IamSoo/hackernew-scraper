@@ -68,3 +68,16 @@ http://localhost:5000/hackernews?posts=3
 
 To use curl command to test open a shell/scripting window and type the following :<br/>
 curl http://localhost:5000/hackernews?posts=3
+
+
+### Major Libraries Used:
+
+ * beautifulsoup4 : For extracting html
+ * json : Handling Json data
+ * Flask : Web framework for exposint REST endpoint
+ * coverage : For unit test coverage
+ * urllib3 : Http client to connect to the website
+ * unittest2 : For unit test
+ * lxml : HTML/XML parser
+ * pyyaml : For handling yaml file(Config file)
+
